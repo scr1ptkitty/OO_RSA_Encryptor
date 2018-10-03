@@ -1,0 +1,45 @@
+<html>
+
+	<head>
+		<script src="RSA.js"></script>
+	</head>
+
+
+	<body>
+		<div id="intro">
+		<p>RSA encryption utilizes a public and private key to simplify the process of sending data securely.
+		 This document is an exercise in modeling the RSA encryption process with Object-Oriented programming, using JavaScript.
+		 It is not suitable for "serious" encryption; rather, it is simply a coding experiment.</p>
+		</div>
+		
+		<div id="input">
+		<p>The encryption process begins with key generation. Choose 2 prime numbers <i>p</i> and <i>q</i>, preferably large ones
+		(they would be, if this were "real" RSA encryption). A list of the first 100 prime numbers can be found 
+		<a href="https://prime-numbers.info/list/first-100-primes">here</a>.</p>
+		
+		<p>
+		p: <input id="get_p" type="text" value="7">
+		<br />
+		q: <input id="get_q" type="text" value="31">
+		<br />
+		<button id="key_gen" onclick="keyGen()">Generate Keys</button>
+		</p>
+		</div>
+		
+		<p id="demo"></p>
+		
+		<script>
+		function keyGen()
+		{
+			var newP = document.getElementById("get_p").value;
+			var newQ = document.getElementById("get_q").value;
+			
+			newP = parseInt(newP);
+			newQ = parseInt(newQ);
+			
+			var myRSA = new RSA(newP, newQ);
+		}
+		</script>
+	</body>
+
+</html>
